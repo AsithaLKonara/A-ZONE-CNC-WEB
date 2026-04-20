@@ -10,11 +10,15 @@ export default function Services() {
       {/* SECTION 1: SERVICES HERO */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000" 
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
             className="w-full h-full object-cover grayscale brightness-50"
-            alt="CNC Cutting Background"
-          />
+          >
+            <source src="/videos/hero-cnc.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/60 z-10" />
         </div>
         <motion.div 
@@ -85,9 +89,17 @@ export default function Services() {
           <motion.div 
              initial={{ opacity: 0, y: 50 }}
              whileInView={{ opacity: 1, y: 0 }}
-             className="relative"
+             className="relative rounded-[3rem] overflow-hidden border border-white/5"
           >
-            <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=1000" className="rounded-[3rem] border border-white/5" alt="Laser Cutting" />
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            >
+              <source src="/videos/laser-process.mp4" type="video/mp4" />
+            </video>
           </motion.div>
           <div className="space-y-6">
             <h2 className="text-4xl font-orbitron font-bold uppercase">Laser Services</h2>

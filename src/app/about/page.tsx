@@ -30,7 +30,17 @@ export default function About() {
 
       {/* SECTION 2: VISION */}
       <section className="py-40 bg-background-secondary border-y border-white/5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-cyan/5 blur-[150px] rounded-full" />
+        <div className="absolute inset-0 z-0 opacity-20">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover grayscale"
+          >
+            <source src="/videos/cnc-routing.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div className="max-w-4xl mx-auto px-6 text-center space-y-12 relative z-10">
           <div className="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-accent-cyan">
              <Eye size={40} />

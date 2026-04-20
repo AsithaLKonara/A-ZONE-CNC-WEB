@@ -19,11 +19,15 @@ export default function Home() {
         {/* Background Video Simulation */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000" 
-            className="w-full h-full object-cover grayscale"
-            alt="CNC Sparks Video Background"
-          />
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover grayscale opacity-60"
+          >
+            <source src="/videos/hero-cnc.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent z-20" />
         </div>
 
@@ -103,11 +107,15 @@ export default function Home() {
       {/* SECTION 3: LASER TECHNOLOGY */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2000" 
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
             className="w-full h-full object-cover grayscale brightness-50"
-            alt="Laser Background"
-          />
+          >
+            <source src="/videos/laser-process.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/60 z-10" />
         </div>
         <motion.div 
@@ -240,7 +248,15 @@ export default function Home() {
       {/* SECTION 8: FINAL CALL TO ACTION */}
       <section className="section-full bg-background-secondary text-center">
         <div className="absolute inset-0 opacity-20">
-           <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000" className="w-full h-full object-cover grayscale" />
+           <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover grayscale"
+          >
+            <source src="/videos/cnc-details.mp4" type="video/mp4" />
+          </video>
         </div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
