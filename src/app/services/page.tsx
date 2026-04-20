@@ -83,7 +83,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SECTION 4: LASER SERVICES */}
+      {/* SECTION 4: LASER & PHOTO ENGRAVING */}
       <section className="section-full max-w-7xl mx-auto gap-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div 
@@ -102,19 +102,39 @@ export default function Services() {
             </video>
           </motion.div>
           <div className="space-y-6">
-            <h2 className="text-4xl font-orbitron font-bold uppercase">Laser Services</h2>
+            <h2 className="text-4xl font-orbitron font-bold uppercase">Laser Photo Engraving</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Ultra-precise laser cutting and engraving for intricate detail on a wide range of materials.
+              Ultra-precise laser cutting and photo engraving for intricate detail on wood, acrylic, glass and more. We transform your photos into permanent industrial masterpieces with absolute clarity.
             </p>
             <div className="grid grid-cols-2 gap-4">
-               {["Metal", "Acrylic", "Wood", "Plastic"].map((m) => (
+               {["Portrait Engraving", "Industrial Marking", "Acrylic Cutting", "Wooden Art"].map((m) => (
                   <div key={m} className="glass p-6 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-accent-cyan/10 transition-all">
                     <span className="font-bold uppercase text-xs tracking-widest">{m}</span>
                     <Zap className="text-accent-cyan" size={16} />
                   </div>
                ))}
             </div>
-            <p className="text-sm text-slate-500 italic mt-4">Ultra clean edges and precise detail guaranteed.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: NEON BRANDING */}
+      <section className="py-40 bg-background-secondary border-y border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8 order-2 lg:order-1">
+            <h2 className="text-5xl font-orbitron font-black uppercase">Neon <br /> Branding</h2>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              Vibrant neon signage that captures attention. From custom indoor decor to commercial brand glows, our neon solutions are built for maximum impact and longevity.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {["Custom Text", "Logo Glow", "RGB Options", "Durable Build"].map((m) => (
+                <span key={m} className="px-6 py-3 glass rounded-2xl text-[10px] font-bold uppercase tracking-widest text-accent-cyan border-accent-cyan/20 border">{m}</span>
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4 order-1 lg:order-2">
+             <img src="/projects/neon-boards/IMG_0268.jpg" className="rounded-[2.5rem] border border-white/5 grayscale hover:grayscale-0 transition-all" alt="Neon Board" />
+             <img src="/projects/neon-boards/IMG_0269.jpg" className="rounded-[2.5rem] border border-white/5 grayscale hover:grayscale-0 transition-all mt-12" alt="Neon Logo" />
           </div>
         </div>
       </section>
@@ -128,12 +148,15 @@ export default function Services() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { t: "Embossed Sign Boards", img: "/projects/embossed-signs/IMG_2430.jpg" },
+              { t: "Embossed Signs", img: "/projects/embossed-signs/IMG_2430.jpg" },
               { t: "Outdoor Lightbox", img: "/projects/lightbox-boards/IMG_2446.jpg" },
               { t: "Infinity Mirrors", img: "/projects/infinity-mirrors/IMG_2436.jpg" },
               { t: "Sticker Cutting", img: "/projects/sticker-cut/IMG_2443.jpg" },
+              { t: "Glass Stickers", img: "/projects/glass-stickers/IMG_1191.jpg" },
+              { t: "Neon Branding", img: "/projects/neon-boards/IMG_0268.jpg" },
               { t: "Business Signage", img: "/projects/embossed-signs/IMG_2400.jpg" },
-              { t: "Display Solutions", img: "/projects/lightbox-boards/IMG_2447.jpg" }
+              { t: "Display Solutions", img: "/projects/lightbox-boards/IMG_2447.jpg" },
+              { t: "Laser Photos", img: "/projects/laser-photos/IMG_0664.jpg" }
             ].map((s) => (
               <div key={s.t} className="group relative h-80 rounded-[2.5rem] overflow-hidden glass">
                  <img src={s.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" alt={s.t} />

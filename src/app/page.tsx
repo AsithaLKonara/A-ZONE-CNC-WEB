@@ -225,9 +225,11 @@ export default function Home() {
         <div className="flex gap-8 overflow-x-auto px-10 pb-10 scrollbar-hide">
           {[
             { t: "Embossed Gold Logo", img: "/projects/embossed-signs/IMG_2430.jpg" },
-            { t: "Outdoor LED Lightbox", img: "/projects/lightbox-boards/IMG_2445.jpg" },
+            { t: "Custom Neon Branding", img: "/projects/neon-boards/IMG_0268.jpg" },
+            { t: "Laser Photo Art", img: "/projects/laser-photos/IMG_0664.jpg" },
             { t: "Infinity Mirror Sign", img: "/projects/infinity-mirrors/IMG_2435.jpg" },
-            { t: "Sticker Cut Graphics", img: "/projects/sticker-cut/IMG_2442.jpg" }
+            { t: "Glass Backlight Board", img: "/projects/glass-stickers/IMG_1191.jpg" },
+            { t: "Outdoor LED Lightbox", img: "/projects/lightbox-boards/IMG_2445.jpg" }
           ].map((p) => (
             <motion.div 
               key={p.t} 
