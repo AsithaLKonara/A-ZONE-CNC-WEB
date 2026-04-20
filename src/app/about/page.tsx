@@ -11,7 +11,7 @@ export default function About() {
             A ZONE CNC & Laser Solutions specializes in precision CNC cutting and laser engraving for signage, fabrication, and custom projects. We bridge the gap between digital design and physical reality, delivering industrial-grade quality with a commitment to craftsmanship.
           </p>
           <div className="p-6 glass border-l-4 border-accent-cyan rounded-r-2xl italic text-slate-400">
-            "Your vision, our precision. Bringing complex designs to life through advanced fabrication technology."
+            &quot;Your vision, our precision. Bringing complex designs to life through advanced fabrication technology.&quot;
           </div>
         </div>
         <div className="relative">
