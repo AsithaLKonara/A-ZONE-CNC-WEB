@@ -46,7 +46,7 @@ export default function Home() {
               <span className="text-accent-cyan neon-glow-cyan">Laser Manufacturing</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-xl font-light leading-relaxed">
-              Advanced cutting, engraving and signage fabrication engineered with accuracy and creativity.
+              Your trusted partner for CNC cutting, laser engraving, and custom sign boards. We turn your ideas into reality with high-quality craftsmanship.
             </p>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function Home() {
           <div className="space-y-8">
             <h2 className="text-5xl md:text-7xl font-black font-orbitron uppercase leading-tight">Designed <br /> for Impact</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              From commercial signage to architectural decorative panels, our fabrication services transform ideas into durable high quality creations.
+              From commercial signage to architectural decorative panels, we turn your unique ideas into reality with high-quality industrial craftsmanship.
             </p>
             <div className="pt-6">
                <Link href="/works" className="text-accent-cyan font-bold uppercase tracking-widest flex items-center gap-3 group">

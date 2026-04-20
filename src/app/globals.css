@@ -50,6 +50,17 @@ body {
   padding-right: 1.5rem;
 }
 
+@media (min-width: 1024px) {
+  .section-full,
+  nav,
+  footer,
+  .px-10,
+  .px-6 {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

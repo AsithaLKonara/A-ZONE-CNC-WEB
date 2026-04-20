@@ -1,15 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="w-full py-24 px-10 border-t border-white/5 bg-[#050505]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
-        <div className="space-y-6">
-          <h2 className="text-xl font-orbitron font-black tracking-widest">A ZONE</h2>
-          <p className="text-slate-500 text-xs font-bold uppercase tracking-widest leading-loose">
-            Precision Cutting <br /> 
-            Laser Engraving <br /> 
-            Custom Fabrication
+        <div className="space-y-6 col-span-1 md:col-span-1">
+          <Image 
+            src="/A ZONE LOGO4.png" 
+            alt="A ZONE Logo" 
+            width={150} 
+            height={50} 
+            className="h-8 w-auto mb-6"
+          />
+          <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest leading-loose max-w-xs">
+            Your trusted partner for CNC cutting, laser engraving, and custom sign boards. We turn your ideas into reality with high-quality craftsmanship.
           </p>
         </div>
 
@@ -24,20 +29,22 @@ export default function Footer() {
         </div>
 
         <div className="space-y-6">
-          <h3 className="text-[10px] uppercase tracking-[0.4em] text-accent-cyan font-bold">Social</h3>
+          <h3 className="text-[10px] uppercase tracking-[0.4em] text-accent-cyan font-bold">Connect</h3>
           <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-400">
-            <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Facebook</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/share/1FwV1gnmPX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
+            <li><a href="https://www.instagram.com/a_zone_cnc?igsh=Zm5veWlnNHBidnlw&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@a.zone.cnc?_r=1&_t=ZS-95hoYFCNAPo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">TikTok</a></li>
+            <li><a href="https://wa.me/message/QID5X7HY6CERJ1" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-accent-cyan">WhatsApp</a></li>
           </ul>
         </div>
 
         <div className="space-y-6">
-          <h3 className="text-[10px] uppercase tracking-[0.4em] text-accent-cyan font-bold">Contact</h3>
+          <h3 className="text-[10px] uppercase tracking-[0.4em] text-accent-cyan font-bold">Location</h3>
           <p className="text-xs font-bold uppercase tracking-widest text-slate-400 leading-relaxed">
             📧 contact@azonecnc.com<br />
-            📞 +1 (234) 567-890<br />
-            📍 Industrial Zone, Suite 402
+            📞 076 852 1562<br />
+            📍 Dehiattakandiya,<br />
+            Sri Lanka
           </p>
         </div>
       </div>

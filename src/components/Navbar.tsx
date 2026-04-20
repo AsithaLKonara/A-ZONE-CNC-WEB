@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -17,8 +18,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] px-10 py-6 flex justify-between items-center glass border-b-white/5">
-      <Link href="/" className="text-xl font-orbitron font-black tracking-[0.4em] text-white">
-        A ZONE<span className="text-accent-cyan">.</span>
+      <Link href="/" className="flex items-center gap-3">
+        <Image 
+          src="/A ZONE LOGO4.png" 
+          alt="A ZONE Logo" 
+          width={180} 
+          height={60} 
+          className="h-10 w-auto"
+          priority
+        />
       </Link>
 
       <div className="hidden md:flex gap-12">
