@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
-import Hero3D from "@/components/Hero3D";
+import dynamic from "next/dynamic";
 import { Cpu, Zap, Box, CheckCircle } from "lucide-react";
+
+const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false });
 
 export default function Home() {
   return (
