@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         background: "var(--background)",
+        "background-secondary": "var(--background-secondary)",
         foreground: "var(--foreground)",
         "accent-cyan": "var(--accent-cyan)",
         "accent-purple": "var(--accent-purple)",
@@ -17,6 +18,9 @@ module.exports = {
         orbitron: ["var(--font-orbitron)"],
         poppins: ["var(--font-poppins)"],
         "space-grotesk": ["var(--font-space-grotesk)"],
+      },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
       },
     },
   },

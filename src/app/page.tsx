@@ -2,141 +2,258 @@
 
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Cpu, Zap, Box, CheckCircle } from "lucide-react";
+import { Cpu, Zap, Box, ArrowRight, Cog, Layers, Printer, PenTool, CheckCircle2 } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false });
 
 export default function Home() {
+  const scrollRef = useRef(null);
+  
   return (
-    <main className="relative min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center p-8 overflow-hidden">
-        <Hero3D />
-        
-        {/* Overlay Gradients */}
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent-cyan/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent-purple/10 rounded-full blur-[120px]" />
-
-        <div className="z-10 text-center max-w-5xl space-y-8">
-          <h1 className="text-6xl md:text-9xl font-bold tracking-tighter font-orbitron">
-            <span className="block text-white opacity-90">A ZONE</span>
-            <span className="block text-gradient neon-glow-cyan">CNC & LASER</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light tracking-[0.2em] uppercase font-space-grotesk">
-            Precision Cutting • Laser Engraving • Custom Fabrication
-          </p>
-
-          <div className="flex flex-wrap gap-6 justify-center pt-8">
-            <Link href="/works" className="glass px-10 py-5 rounded-full text-lg font-medium hover:bg-accent-cyan/10 transition-all hover:scale-105 neon-glow-cyan uppercase tracking-widest">
-              View Works
-            </Link>
-            <Link href="/contact" className="bg-white text-black px-10 py-5 rounded-full text-lg font-bold hover:bg-slate-200 transition-all hover:scale-105 uppercase tracking-widest">
-              Get Quote
-            </Link>
-          </div>
+    <main className="bg-background overflow-x-hidden">
+      
+      {/* SECTION 1: HERO CINEMATIC INTRO */}
+      <section className="relative h-screen flex items-center px-10 overflow-hidden">
+        {/* Background Video Simulation */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/70 z-10" />
+          <img 
+            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000" 
+            className="w-full h-full object-cover grayscale"
+            alt="CNC Sparks Video Background"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent z-20" />
         </div>
 
-        {/* Hero Stats */}
-        <div className="absolute bottom-20 left-0 w-full px-8 hidden md:block">
-          <div className="max-w-7xl mx-auto flex justify-between items-center glass p-8 rounded-3xl border-white/5">
+        <div className="relative z-30 max-w-5xl space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="space-y-4"
+          >
+            <span className="inline-block px-4 py-1 glass rounded-full text-xs font-bold uppercase tracking-[0.3em] text-accent-cyan">
+              A ZONE CNC & Laser Solutions
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black font-orbitron leading-tight">
+              Precision CNC & <br />
+              <span className="text-accent-cyan neon-glow-cyan">Laser Manufacturing</span>
+            </h1>
+            <p className="text-xl text-slate-400 max-w-xl font-light leading-relaxed">
+              Advanced cutting, engraving and signage fabrication engineered with accuracy and creativity.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="flex gap-6"
+          >
+            <Link href="/works" className="px-8 py-4 glass hover:bg-accent-cyan/10 transition-all rounded-full font-bold uppercase tracking-widest text-sm border-white/20">
+              View Our Work
+            </Link>
+            <Link href="/contact" className="px-8 py-4 bg-white text-black hover:bg-accent-cyan transition-all rounded-full font-bold uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+              Get Quote
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 2: TECHNOLOGY SHOWCASE */}
+      <section className="section-full bg-background-secondary border-y border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+            <div className="absolute inset-0 bg-accent-cyan/20 blur-[120px] rounded-full" />
+            <img 
+              src="https://images.unsplash.com/photo-1565034946487-077f78e480c5?q=80&w=1000" 
+              className="relative rounded-3xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-700"
+              alt="Next Gen CNC"
+            />
+          </motion.div>
+
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-6xl font-bold font-orbitron uppercase">Next Generation <br /><span className="text-accent-cyan">CNC Precision</span></h2>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              Our advanced CNC technology delivers micron level accuracy for cutting, engraving and complex fabrication projects. Used by designers, industries and businesses to produce high quality custom parts.
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { title: "Ultra precise cutting", icon: <CheckCircle2 className="text-accent-cyan" /> },
+                { title: "Clean edge finishing", icon: <CheckCircle2 className="text-accent-cyan" /> },
+                { title: "High speed production", icon: <CheckCircle2 className="text-accent-cyan" /> },
+                { title: "Multi-material support", icon: <CheckCircle2 className="text-accent-cyan" /> }
+              ].map((f) => (
+                <div key={f.title} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-300">
+                  {f.icon} {f.title}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: LASER TECHNOLOGY */}
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2000" 
+            className="w-full h-full object-cover grayscale brightness-50"
+            alt="Laser Background"
+          />
+          <div className="absolute inset-0 bg-black/60 z-10" />
+        </div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="relative z-20 text-center space-y-6 px-6"
+        >
+          <h2 className="text-5xl md:text-8xl font-black font-orbitron uppercase">Laser Accuracy. <br /><span className="text-accent-cyan neon-glow-cyan">Perfect Detail.</span></h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            Our laser systems create ultra-fine engraving and precise cutting for acrylic, wood, metal and signage materials.
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 pt-8">
+            {["Custom signage", "Logo engraving", "Architectural panels", "Decorative designs"].map((t) => (
+              <span key={t} className="text-xs font-bold uppercase tracking-[0.4em] text-accent-cyan border-b border-accent-cyan/30 pb-2">{t}</span>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* SECTION 4: SERVICES PREVIEW */}
+      <section className="section-full">
+        <div className="max-w-7xl mx-auto w-full space-y-16">
+          <h2 className="text-4xl font-orbitron font-bold uppercase text-center tracking-widest">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { label: "Precision", value: "0.01mm" },
-              { label: "Materials", value: "20+" },
-              { label: "Delivery", value: "48Hrs" },
-              { label: "Satisfaction", value: "100%" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <p className="text-accent-cyan text-2xl font-orbitron font-bold">{stat.value}</p>
-                <p className="text-slate-500 text-[10px] uppercase tracking-widest">{stat.label}</p>
+              { name: "CNC Cutting", icon: <Cog /> },
+              { name: "CNC Engraving", icon: <PenTool /> },
+              { name: "Laser Cutting", icon: <Zap /> },
+              { name: "Laser Engraving", icon: <Layers /> },
+              { name: "Sign Boards", icon: <Box /> },
+              { name: "Custom Fabrication", icon: <Cpu /> }
+            ].map((s) => (
+              <motion.div
+                key={s.name}
+                whileHover={{ scale: 1.02, borderColor: '#00e5ff' }}
+                className="glass p-12 rounded-[2rem] border-white/5 transition-all group flex flex-col items-center text-center space-y-6"
+              >
+                <div className="w-16 h-16 glass flex items-center justify-center rounded-2xl text-accent-cyan group-hover:bg-accent-cyan/10 transition-all">
+                  {s.icon}
+                </div>
+                <h3 className="text-xl font-bold font-orbitron uppercase">{s.name}</h3>
+                <div className="w-10 h-1 bg-white/10 rounded-full group-hover:w-20 group-hover:bg-accent-cyan transition-all" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: LARGE PRODUCT SHOWCASE */}
+      <section className="section-full bg-background-secondary">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8">
+            <h2 className="text-5xl md:text-7xl font-black font-orbitron uppercase leading-tight">Designed <br /> for Impact</h2>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              From commercial signage to architectural decorative panels, our fabrication services transform ideas into durable high quality creations.
+            </p>
+            <div className="pt-6">
+               <Link href="/works" className="text-accent-cyan font-bold uppercase tracking-widest flex items-center gap-3 group">
+                  See what we build <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+               </Link>
+            </div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="relative"
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1000" 
+              className="rounded-[3rem] border border-white/5 shadow-2xl"
+              alt="Laser Cut Product"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 6: PROCESS */}
+      <section className="section-full border-t border-white/5">
+        <div className="max-w-7xl mx-auto w-full space-y-24">
+          <h2 className="text-4xl font-orbitron font-bold uppercase text-center tracking-widest">The Fabrication Process</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {[
+              { num: "01", title: "Design Consultation", icon: <Layers /> },
+              { num: "02", title: "Material Selection", icon: <Box /> },
+              { num: "03", title: "CNC / Laser Production", icon: <Cog /> },
+              { num: "04", title: "Finishing & Inspection", icon: <CheckCircle2 /> },
+              { num: "05", title: "Installation or Delivery", icon: <ArrowRight /> }
+            ].map((step, i) => (
+              <div key={step.title} className="relative space-y-6 text-center">
+                <div className="w-16 h-16 glass mx-auto flex items-center justify-center rounded-2xl text-accent-cyan font-orbitron font-bold">
+                  {step.num}
+                </div>
+                <h3 className="text-xs font-bold uppercase tracking-widest text-slate-300">{step.title}</h3>
+                {i < 4 && <div className="hidden md:block absolute top-8 left-[70%] w-full h-[1px] bg-gradient-to-r from-accent-cyan/50 to-transparent" />}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-32 px-6 max-w-7xl mx-auto space-y-16">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-orbitron font-bold uppercase">Our Expertise</h2>
-            <p className="text-slate-400 max-w-xl">From rapid prototyping to mass production, we provide high-tech solutions for every material.</p>
-          </div>
-          <Link href="/services" className="text-accent-cyan text-sm uppercase tracking-widest font-bold border-b border-accent-cyan pb-1">
-            Explore All Services
+      {/* SECTION 7: FEATURED PROJECTS (Scrolling Gallery) */}
+      <section className="py-40 space-y-16">
+        <div className="px-10 flex justify-between items-end">
+          <h2 className="text-4xl font-orbitron font-bold uppercase">Work Speaks <br /><span className="text-slate-500 italic">Through Precision</span></h2>
+          <Link href="/works" className="text-xs font-bold uppercase tracking-widest border-b border-white pb-1">View Portfolio</Link>
+        </div>
+        <div className="flex gap-8 overflow-x-auto px-10 pb-10 scrollbar-hide">
+          {[
+            { t: "Laser Cut Metal Logo", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600" },
+            { t: "Acrylic LED Sign", img: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=600" },
+            { t: "CNC Carved Wood", img: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=600" },
+            { t: "Glass Name Board", img: "https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=600" }
+          ].map((p) => (
+            <motion.div 
+              key={p.t} 
+              whileHover={{ y: -10 }}
+              className="flex-shrink-0 w-[400px] group cursor-pointer"
+            >
+              <div className="relative h-[500px] rounded-[2.5rem] overflow-hidden">
+                <img src={p.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" alt={p.t} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-10 flex flex-col justify-end">
+                   <h3 className="text-2xl font-bold font-orbitron uppercase text-white">{p.t}</h3>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 8: FINAL CALL TO ACTION */}
+      <section className="section-full bg-background-secondary text-center">
+        <div className="absolute inset-0 opacity-20">
+           <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000" className="w-full h-full object-cover grayscale" />
+        </div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="relative z-10 max-w-4xl mx-auto space-y-12"
+        >
+          <h2 className="text-6xl md:text-8xl font-black font-orbitron uppercase leading-none">Ready to build <br /> something <span className="text-accent-cyan italic">unique?</span></h2>
+          <Link href="/contact" className="inline-block bg-white text-black px-12 py-6 rounded-full text-xl font-black uppercase tracking-widest hover:bg-accent-cyan transition-all hover:scale-105">
+            Request Custom Quote
           </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { icon: <Cpu />, title: "CNC Cutting", desc: "Precision routing for MDF, Acrylic, and Aluminium." },
-            { icon: <Zap />, title: "Laser Engraving", desc: "Detailed engraving on wood, leather, and metal." },
-            { icon: <Box />, title: "Custom Fabrication", desc: "Bespoke signs, panels, and industrial components." }
-          ].map((item, i) => (
-            <div key={i} className="glass p-10 rounded-[2.5rem] space-y-6 hover:border-accent-cyan/50 transition-all group">
-              <div className="w-16 h-16 glass flex items-center justify-center rounded-2xl text-accent-cyan group-hover:scale-110 transition-transform">
-                {item.icon}
-              </div>
-              <h3 className="text-2xl font-bold font-orbitron">{item.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+        </motion.div>
       </section>
 
-      {/* Featured Projects Preview */}
-      <section className="py-32 bg-white/5">
-        <div className="max-w-7xl mx-auto px-6 space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-orbitron font-bold uppercase">Featured Projects</h2>
-            <p className="text-slate-400">A glimpse into our recent high-precision works.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group relative h-[500px] rounded-[3rem] overflow-hidden glass">
-              <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Work 1" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-12 flex flex-col justify-end">
-                <h3 className="text-3xl font-bold font-orbitron">Acrylic LED Signage</h3>
-                <p className="text-accent-cyan uppercase tracking-widest text-xs mt-2 font-bold">Laser Engraving</p>
-              </div>
-            </div>
-            <div className="grid grid-rows-2 gap-8">
-              <div className="group relative rounded-[2rem] overflow-hidden glass">
-                <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Work 2" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 flex flex-col justify-end">
-                  <h3 className="text-xl font-bold font-orbitron">MDF Wall Panels</h3>
-                  <p className="text-accent-cyan uppercase tracking-widest text-[10px] mt-1 font-bold">CNC Cutting</p>
-                </div>
-              </div>
-              <div className="group relative rounded-[2rem] overflow-hidden glass">
-                <img src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Work 3" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 flex flex-col justify-end">
-                  <h3 className="text-xl font-bold font-orbitron">Leather Branding</h3>
-                  <p className="text-accent-cyan uppercase tracking-widest text-[10px] mt-1 font-bold">Laser Engraving</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust / Process */}
-      <section className="py-32 px-6 max-w-7xl mx-auto text-center space-y-16">
-        <h2 className="text-3xl font-orbitron font-bold uppercase tracking-[0.3em]">Quality Assured</h2>
-        <div className="flex flex-wrap justify-center gap-12">
-          {[
-            "Industrial Precision",
-            "Premium Materials",
-            "Expert Craftsmanship",
-            "Fast Turnaround"
-          ].map((text, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <CheckCircle className="text-accent-cyan w-5 h-5" />
-              <span className="text-sm uppercase tracking-widest text-slate-300 font-bold">{text}</span>
-            </div>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }
