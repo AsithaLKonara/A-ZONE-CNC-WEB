@@ -41,7 +41,7 @@ export default function Services() {
              whileInView={{ opacity: 1, x: 0 }}
              className="relative"
           >
-            <img src="https://images.unsplash.com/photo-1565034946487-077f78e480c5?q=80&w=1000" className="rounded-[3rem] border border-white/5 grayscale" alt="CNC Cutting" />
+            <img src="/projects/embossed-signs/IMG_2432.jpg" className="rounded-[3rem] border border-white/5 grayscale" alt="CNC Cutting" />
           </motion.div>
           <div className="space-y-6">
             <h2 className="text-4xl font-orbitron font-bold uppercase">CNC Cutting</h2>
@@ -78,7 +78,7 @@ export default function Services() {
              whileInView={{ opacity: 1, x: 0 }}
              className="relative order-1 lg:order-2"
           >
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000" className="rounded-[3rem] border border-white/5 grayscale" alt="CNC Engraving" />
+            <img src="/projects/embossed-signs/IMG_2404.jpg" className="rounded-[3rem] border border-white/5 grayscale" alt="CNC Engraving" />
           </motion.div>
         </div>
       </section>
@@ -128,12 +128,12 @@ export default function Services() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { t: "Advertising Boards", img: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=600" },
-              { t: "Name Boards", img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600" },
-              { t: "Light Box Boards", img: "https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=600" },
-              { t: "Embossed Letters", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600" },
-              { t: "Glass Boards", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600" },
-              { t: "Sign Boards", img: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=600" }
+              { t: "Embossed Sign Boards", img: "/projects/embossed-signs/IMG_2430.jpg" },
+              { t: "Outdoor Lightbox", img: "/projects/lightbox-boards/IMG_2446.jpg" },
+              { t: "Infinity Mirrors", img: "/projects/infinity-mirrors/IMG_2436.jpg" },
+              { t: "Sticker Cutting", img: "/projects/sticker-cut/IMG_2443.jpg" },
+              { t: "Business Signage", img: "/projects/embossed-signs/IMG_2400.jpg" },
+              { t: "Display Solutions", img: "/projects/lightbox-boards/IMG_2447.jpg" }
             ].map((s) => (
               <div key={s.t} className="group relative h-80 rounded-[2.5rem] overflow-hidden glass">
                  <img src={s.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" alt={s.t} />

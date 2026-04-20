@@ -23,7 +23,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             className="relative"
           >
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000" className="rounded-[3rem] border border-white/5 grayscale" alt="Engineering" />
+            <img src="/projects/lightbox-boards/IMG_2449.jpg" className="rounded-[3rem] border border-white/5 grayscale" alt="Engineering" />
           </motion.div>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
              <div className="glass p-8 rounded-[3rem] space-y-6 group">
                 <div className="h-80 overflow-hidden rounded-[2rem] border border-white/5">
-                   <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Machine 1" />
+                   <img src="/projects/embossed-signs/IMG_2411.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Machine 1" />
                 </div>
                 <div className="space-y-2">
                    <h3 className="text-xl font-bold font-orbitron uppercase">Multi-Axis CNC Milling</h3>
@@ -97,7 +97,7 @@ export default function About() {
              </div>
              <div className="glass p-8 rounded-[3rem] space-y-6 group">
                 <div className="h-80 overflow-hidden rounded-[2rem] border border-white/5">
-                   <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=600" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Machine 2" />
+                   <img src="/projects/infinity-mirrors/IMG_2438.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Machine 2" />
                 </div>
                 <div className="space-y-2">
                    <h3 className="text-xl font-bold font-orbitron uppercase">Precision Fiber Laser</h3>

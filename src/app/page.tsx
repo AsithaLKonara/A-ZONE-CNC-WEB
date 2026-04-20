@@ -77,7 +77,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-accent-cyan/20 blur-[120px] rounded-full" />
             <img 
-              src="https://images.unsplash.com/photo-1565034946487-077f78e480c5?q=80&w=1000" 
+              src="/projects/embossed-signs/IMG_2400.jpg" 
               className="relative rounded-3xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-700"
               alt="Next Gen CNC"
             />
@@ -184,7 +184,7 @@ export default function Home() {
             className="relative"
           >
             <img 
-              src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1000" 
+              src="/projects/lightbox-boards/IMG_2445.jpg" 
               className="rounded-[3rem] border border-white/5 shadow-2xl"
               alt="Laser Cut Product"
             />
@@ -224,10 +224,10 @@ export default function Home() {
         </div>
         <div className="flex gap-8 overflow-x-auto px-10 pb-10 scrollbar-hide">
           {[
-            { t: "Laser Cut Metal Logo", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600" },
-            { t: "Acrylic LED Sign", img: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=600" },
-            { t: "CNC Carved Wood", img: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=600" },
-            { t: "Glass Name Board", img: "https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=600" }
+            { t: "Embossed Gold Logo", img: "/projects/embossed-signs/IMG_2430.jpg" },
+            { t: "Outdoor LED Lightbox", img: "/projects/lightbox-boards/IMG_2445.jpg" },
+            { t: "Infinity Mirror Sign", img: "/projects/infinity-mirrors/IMG_2435.jpg" },
+            { t: "Sticker Cut Graphics", img: "/projects/sticker-cut/IMG_2442.jpg" }
           ].map((p) => (
             <motion.div 
               key={p.t} 

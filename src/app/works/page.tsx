@@ -4,15 +4,28 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Users, Briefcase, Layers } from "lucide-react";
 
-const categories = ["All", "CNC Projects", "Laser Projects", "Signage Projects", "Custom Designs"];
+const categories = ["All", "CNC Projects", "Laser Projects", "Signage Projects", "Prints"];
 
 const projects = [
-  { t: "Laser Cut Metal Logo", c: "Laser Projects", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800" },
-  { t: "Acrylic LED Board", c: "Signage Projects", img: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=800" },
-  { t: "CNC Carved Wood Panel", c: "CNC Projects", img: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800" },
-  { t: "Glass Name Board", c: "Custom Designs", img: "https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=800" },
-  { t: "Embossed Sign Letters", c: "Signage Projects", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800" },
-  { t: "Architecture Pattern", c: "Custom Designs", img: "https://images.unsplash.com/photo-1565034946487-077f78e480c5?q=80&w=800" }
+  // Signage - Embossed
+  { t: "Embossed Gold Signage", c: "Signage Projects", img: "/projects/embossed-signs/IMG_2430.jpg" },
+  { t: "Black Lettering Board", c: "Signage Projects", img: "/projects/embossed-signs/IMG_2400.jpg" },
+  { t: "Corporate Logo Wall", c: "Signage Projects", img: "/projects/embossed-signs/IMG_2411.jpg" },
+  
+  // Lightbox
+  { t: "Outdoor LED Lightbox", c: "Signage Projects", img: "/projects/lightbox-boards/IMG_2445.jpg" },
+  { t: "Commercial Light Box", c: "Signage Projects", img: "/projects/lightbox-boards/IMG_2447.jpg" },
+  
+  // Infinity Mirrors
+  { t: "Infinity Mirror Sign", c: "Signage Projects", img: "/projects/infinity-mirrors/IMG_2435.jpg" },
+  { t: "Custom Neon Layout", c: "Signage Projects", img: "/projects/infinity-mirrors/IMG_2437.jpg" },
+  
+  // Sticker Cut
+  { t: "Vehicle Sticker Cut", c: "Signage Projects", img: "/projects/sticker-cut/IMG_2442.jpg" },
+  
+  // Banner Prints
+  { t: "Industrial Banner Print", c: "Prints", img: "/projects/banner-prints/IMG_2439.jpg" },
+  { t: "Exhibition Backdrop", c: "Prints", img: "/projects/banner-prints/IMG_2440.jpg" },
 ];
 
 export default function Works() {
@@ -26,9 +39,9 @@ export default function Works() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=2000" 
+            src="/projects/lightbox-boards/IMG_2449.jpg" 
             className="w-full h-full object-cover grayscale brightness-50"
-            alt="Laser Sparks Background"
+            alt="Portfolio Background"
           />
           <div className="absolute inset-0 bg-black/70 z-10" />
         </div>
@@ -88,15 +101,15 @@ export default function Works() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
             <div className="px-4 py-1 glass rounded-full inline-block text-xs font-bold uppercase tracking-widest text-accent-cyan">Featured Case Study</div>
-            <h2 className="text-5xl font-orbitron font-black uppercase">LED Acrylic <br /> Business Sign</h2>
+            <h2 className="text-5xl font-orbitron font-black uppercase">Gold Lettering <br /> Commercial Sign</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Complete design-to-installation showcase for a high-end retail brand. We combined 12mm laser-cut acrylic with custom CNC-routed backing and high-intensity LED integration.
+              Precision-cut embossed gold sign board for a premium retail outlet. This project showcases our multi-layer fabrication technique, combining CNC routing with hand-finished assembly.
             </p>
             <div className="space-y-4">
                {[
                  { t: "Phase 1: Custom Vector Design", icon: <Star /> },
-                 { t: "Phase 2: Precision Laser Cutting", icon: <Star /> },
-                 { t: "Phase 3: Expert Installation", icon: <Star /> }
+                 { t: "Phase 2: CNC Precise Routing", icon: <Star /> },
+                 { t: "Phase 3: Embossed Finishing", icon: <Star /> }
                ].map((step) => (
                   <div key={step.t} className="flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-slate-300">
                      <div className="w-2 h-2 bg-accent-cyan rounded-full shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
@@ -106,8 +119,8 @@ export default function Works() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-             <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=600" className="rounded-3xl border border-white/5" alt="Design" />
-             <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=600" className="rounded-3xl border border-white/5 mt-8" alt="Cutting" />
+             <img src="/projects/embossed-signs/IMG_2432.jpg" className="rounded-3xl border border-white/5" alt="Embossed Detail" />
+             <img src="/projects/embossed-signs/IMG_2406.jpg" className="rounded-3xl border border-white/5 mt-8" alt="Assembly" />
           </div>
         </div>
       </section>
@@ -116,9 +129,9 @@ export default function Works() {
       <section className="py-40 max-w-7xl mx-auto px-6">
          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
-              { val: "100+", t: "Completed Projects", icon: <Briefcase /> },
-              { val: "50+", t: "Happy Clients", icon: <Users /> },
-              { val: "10+", t: "Industries Served", icon: <Layers /> }
+              { val: "500+", t: "Completed Projects", icon: <Briefcase /> },
+              { val: "200+", t: "Happy Clients", icon: <Users /> },
+              { val: "15+", t: "Industries Served", icon: <Layers /> }
             ].map((s) => (
                <div key={s.t} className="text-center space-y-4">
                   <div className="w-20 h-20 mx-auto glass rounded-[2rem] flex items-center justify-center text-accent-cyan">{s.icon}</div>
