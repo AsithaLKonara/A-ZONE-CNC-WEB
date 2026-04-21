@@ -61,20 +61,20 @@ export default function Works() {
           animate={{ opacity: 1, y: 0 }}
           className="relative z-20 text-center space-y-4 px-6"
         >
-          <h1 className="text-5xl md:text-8xl font-black font-orbitron uppercase leading-tight">
-            Our Portfolio <br /><span className="text-accent-cyan neon-glow-cyan text-6xl">Total Fabrication</span>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black font-orbitron uppercase leading-tight">
+            Our Portfolio <br /><span className="text-accent-cyan neon-glow-cyan text-4xl md:text-6xl">Total Fabrication</span>
           </h1>
         </motion.div>
       </section>
 
       {/* SECTION 2: FILTER GALLERY */}
       <section className="py-32 max-w-7xl mx-auto px-6 space-y-16">
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
+              className={`px-6 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all ${
                 filter === cat 
                   ? "bg-accent-cyan text-black shadow-[0_0_20px_rgba(0,229,255,0.4)]" 
                   : "glass text-slate-400 hover:text-white"
@@ -94,12 +94,12 @@ export default function Works() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="group relative h-[450px] rounded-[2.5rem] overflow-hidden glass border-white/5"
+                className="group relative h-[350px] md:h-[450px] rounded-[2.5rem] overflow-hidden glass border-white/5"
               >
                 <img src={p.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" alt={p.t} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-10 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-8 md:p-10 flex flex-col justify-end">
                    <p className="text-accent-cyan text-[10px] font-bold uppercase tracking-[0.3em] mb-2">{p.c}</p>
-                   <h3 className="text-2xl font-bold font-orbitron uppercase text-white">{p.t}</h3>
+                   <h3 className="text-xl md:text-2xl font-bold font-orbitron uppercase text-white">{p.t}</h3>
                 </div>
               </motion.div>
             ))}
@@ -138,16 +138,16 @@ export default function Works() {
 
       {/* SECTION 4: PROJECT STATISTICS */}
       <section className="py-40 max-w-7xl mx-auto px-6">
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
             {[
               { val: "1000+", t: "Projects Delivered", icon: <Briefcase /> },
               { val: "500+", t: "Active Clients", icon: <Users /> },
               { val: "20+", t: "Service Categories", icon: <Layers /> }
             ].map((s) => (
                <div key={s.t} className="text-center space-y-4">
-                  <div className="w-20 h-20 mx-auto glass rounded-[2rem] flex items-center justify-center text-accent-cyan">{s.icon}</div>
-                  <h3 className="text-6xl font-black font-orbitron text-white">{s.val}</h3>
-                  <p className="text-xs font-bold uppercase tracking-[0.4em] text-slate-500">{s.t}</p>
+                  <div className="w-16 h-16 md:w-20 md:h-20 mx-auto glass rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center text-accent-cyan">{s.icon}</div>
+                  <h3 className="text-5xl md:text-6xl font-black font-orbitron text-white">{s.val}</h3>
+                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-slate-500">{s.t}</p>
                </div>
             ))}
          </div>
