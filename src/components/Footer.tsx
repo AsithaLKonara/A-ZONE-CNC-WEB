@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-24 px-10 border-t border-white/5 bg-[#050505]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+    <footer className="w-full py-16 md:py-24 px-6 md:px-10 border-t border-white/5 bg-[#050505]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16">
         <div className="space-y-6 col-span-1 md:col-span-1">
           <Image 
             src="/A ZONE LOGO4.png" 
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto pt-16 mt-16 border-t border-white/5 text-center text-[10px] text-slate-600 font-bold uppercase tracking-[0.5em]">
+      <div className="max-w-7xl mx-auto pt-12 md:pt-16 mt-12 md:mt-16 border-t border-white/5 text-center text-[10px] text-slate-600 font-bold uppercase tracking-[0.2em] md:tracking-[0.5em] px-4">
         © 2026 A ZONE CNC & LASER SOLUTIONS. ALL RIGHTS RESERVED.
       </div>
     </footer>
