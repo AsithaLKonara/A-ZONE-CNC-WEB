@@ -15,7 +15,7 @@ export default function Home() {
     <main className="bg-background overflow-x-hidden">
       
       {/* SECTION 1: HERO CINEMATIC INTRO */}
-      <section className="relative h-screen flex items-center px-10 overflow-hidden">
+      <section className="relative h-screen flex items-center px-6 lg:px-10 overflow-hidden">
         {/* Background Video Simulation */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" />
@@ -41,7 +41,7 @@ export default function Home() {
             <span className="inline-block px-4 py-1 glass rounded-full text-xs font-bold uppercase tracking-[0.3em] text-accent-cyan">
               A ZONE CNC & Laser Solutions
             </span>
-            <h1 className="text-6xl md:text-8xl font-black font-orbitron leading-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black font-orbitron leading-tight">
               Precision CNC & <br />
               <span className="text-accent-cyan neon-glow-cyan">Laser Manufacturing</span>
             </h1>
@@ -54,12 +54,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex gap-6"
+            className="flex flex-wrap gap-4 md:gap-6"
           >
-            <Link href="/works" className="px-8 py-4 glass hover:bg-accent-cyan/10 transition-all rounded-full font-bold uppercase tracking-widest text-sm border-white/20">
+            <Link href="/works" className="flex-1 md:flex-none text-center px-8 py-4 glass hover:bg-accent-cyan/10 transition-all rounded-full font-bold uppercase tracking-widest text-[10px] md:text-sm border-white/20">
               View Our Work
             </Link>
-            <Link href="/contact" className="px-8 py-4 bg-white text-black hover:bg-accent-cyan transition-all rounded-full font-bold uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+            <Link href="/contact" className="flex-1 md:flex-none text-center px-8 py-4 bg-white text-black hover:bg-accent-cyan transition-all rounded-full font-bold uppercase tracking-widest text-[10px] md:text-sm shadow-[0_0_30px_rgba(255,255,255,0.2)]">
               Get Quote
             </Link>
           </motion.div>
@@ -123,13 +123,13 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           className="relative z-20 text-center space-y-6 px-6"
         >
-          <h2 className="text-5xl md:text-8xl font-black font-orbitron uppercase">Laser Accuracy. <br /><span className="text-accent-cyan neon-glow-cyan">Perfect Detail.</span></h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <h2 className="text-4xl md:text-8xl font-black font-orbitron uppercase">Laser Accuracy. <br /><span className="text-accent-cyan neon-glow-cyan">Perfect Detail.</span></h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-base md:text-lg">
             Our laser systems create ultra-fine engraving and precise cutting for acrylic, wood, metal and signage materials.
           </p>
-          <div className="flex flex-wrap justify-center gap-8 pt-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 pt-8">
             {["Custom signage", "Logo engraving", "Architectural panels", "Decorative designs"].map((t) => (
-              <span key={t} className="text-xs font-bold uppercase tracking-[0.4em] text-accent-cyan border-b border-accent-cyan/30 pb-2">{t}</span>
+              <span key={t} className="text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-accent-cyan border-b border-accent-cyan/30 pb-2">{t}</span>
             ))}
           </div>
         </motion.div>
@@ -151,7 +151,7 @@ export default function Home() {
               <motion.div
                 key={s.name}
                 whileHover={{ scale: 1.02, borderColor: '#00e5ff' }}
-                className="glass p-12 rounded-[2rem] border-white/5 transition-all group flex flex-col items-center text-center space-y-6"
+                className="glass p-8 md:p-12 rounded-[2rem] border-white/5 transition-all group flex flex-col items-center text-center space-y-6"
               >
                 <div className="w-16 h-16 glass flex items-center justify-center rounded-2xl text-accent-cyan group-hover:bg-accent-cyan/10 transition-all">
                   {s.icon}
@@ -168,7 +168,7 @@ export default function Home() {
       <section className="section-full bg-background-secondary">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
-            <h2 className="text-5xl md:text-7xl font-black font-orbitron uppercase leading-tight">Designed <br /> for Impact</h2>
+            <h2 className="text-4xl md:text-7xl font-black font-orbitron uppercase leading-tight">Designed <br /> for Impact</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
               From commercial signage to architectural decorative panels, we turn your unique ideas into reality with high-quality industrial craftsmanship.
             </p>
@@ -222,7 +222,7 @@ export default function Home() {
           <h2 className="text-4xl font-orbitron font-bold uppercase">Work Speaks <br /><span className="text-slate-500 italic">Through Precision</span></h2>
           <Link href="/works" className="text-xs font-bold uppercase tracking-widest border-b border-white pb-1">View Portfolio</Link>
         </div>
-        <div className="flex gap-8 overflow-x-auto px-10 pb-10 scrollbar-hide">
+        <div className="flex gap-6 md:gap-8 overflow-x-auto px-6 md:px-10 pb-10 scrollbar-hide">
           {[
             { t: "Embossed Gold Logo", img: "/projects/embossed-signs/IMG_2430.jpg" },
             { t: "Custom Neon Branding", img: "/projects/neon-boards/IMG_0268.jpg" },
@@ -234,12 +234,12 @@ export default function Home() {
             <motion.div 
               key={p.t} 
               whileHover={{ y: -10 }}
-              className="flex-shrink-0 w-[400px] group cursor-pointer"
+              className="flex-shrink-0 w-[280px] md:w-[400px] group cursor-pointer"
             >
-              <div className="relative h-[500px] rounded-[2.5rem] overflow-hidden">
+              <div className="relative h-[400px] md:h-[500px] rounded-[2.5rem] overflow-hidden">
                 <img src={p.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" alt={p.t} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-10 flex flex-col justify-end">
-                   <h3 className="text-2xl font-bold font-orbitron uppercase text-white">{p.t}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
+                   <h3 className="text-xl md:text-2xl font-bold font-orbitron uppercase text-white">{p.t}</h3>
                 </div>
               </div>
             </motion.div>
@@ -265,8 +265,8 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           className="relative z-10 max-w-4xl mx-auto space-y-12"
         >
-          <h2 className="text-6xl md:text-8xl font-black font-orbitron uppercase leading-none">Ready to build <br /> something <span className="text-accent-cyan italic">unique?</span></h2>
-          <Link href="/contact" className="inline-block bg-white text-black px-12 py-6 rounded-full text-xl font-black uppercase tracking-widest hover:bg-accent-cyan transition-all hover:scale-105">
+          <h2 className="text-4xl md:text-8xl font-black font-orbitron uppercase leading-none">Ready to build <br /> something <span className="text-accent-cyan italic">unique?</span></h2>
+          <Link href="/contact" className="inline-block bg-white text-black px-8 py-4 md:px-12 md:py-6 rounded-full text-lg md:text-xl font-black uppercase tracking-widest hover:bg-accent-cyan transition-all hover:scale-105">
             Request Custom Quote
           </Link>
         </motion.div>
